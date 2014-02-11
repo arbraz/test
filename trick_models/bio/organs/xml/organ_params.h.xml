@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="/home/Alex/Downloads/07.23.1/docs/trick_struct.xsl"?>
+
+<!--Note:
+    Firefox 3 fails to process XSLT files if they are on the local hard drive
+    plus outside of the current XML file's path (or descendant paths). Users
+    may need to edit $HOME/.mozilla/firefox/*.default/prefs.js and add a new
+    URI setting in order to properly view this file in a firefox browser:
+    - user_pref("security.fileuri.strict_origin_policy", false);
+    OR
+    - type about:config in the address bar
+    - change security.fileuri.strict_origin_policy to false
+-->
+
+<file>
+    <file_name> organ_params.h </file_name>
+    <full_path_file_name> /home/Alex/trick_models/bio/organs/include/organ_params.h </full_path_file_name>
+    <trick_header>
+        <references>
+        </references>
+        <assumptions>
+        </assumptions>
+        <requirements>
+        </requirements>
+        <library_dependencies>
+        </library_dependencies>
+        <purpose> Organ params </purpose>
+        <class></class>
+        <modifications>
+        </modifications>
+    </trick_header>
+
+    <enumerations>
+    </enumerations>
+
+    <structures>
+        <struct>
+            <struct_name>params_T</struct_name>
+            <member>
+                <pname>Pli</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>liver P param</comment>
+            </member>
+            <member>
+                <pname>Plu</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>lung P param</comment>
+            </member>
+            <member>
+                <pname>Qli</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>liver Q param</comment>
+            </member>
+            <member>
+                <pname>Qlu</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>lung Q param</comment>
+            </member>
+            <member>
+                <pname>Qm</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>tissue Q param</comment>
+            </member>
+            <member>
+                <pname>Vli</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>liver V param</comment>
+            </member>
+            <member>
+                <pname>Vlu</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>lung V param</comment>
+            </member>
+            <member>
+                <pname>Vm</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>tissue V param</comment>
+            </member>
+            <member>
+                <pname>Km_p_450</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Km param</comment>
+            </member>
+            <member>
+                <pname>Vmax_p_450</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Vmax p-450 param</comment>
+            </member>
+            <member>
+                <pname>Mli</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Mli param</comment>
+            </member>
+            <member>
+                <pname>Mlu</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Mlu param</comment>
+            </member>
+            <member>
+                <pname>kinj</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Not Specified</comment>
+            </member>
+        </struct>
+
+    </structures>
+
+</file>

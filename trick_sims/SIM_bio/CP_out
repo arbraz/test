@@ -1,0 +1,82 @@
+Output for /home/Alex/Downloads/07.23.1/bin/CP version 07.23.1-1 at Tue Feb 11 15:38:05 2014
+
+Parsing S_define...
+
+Reading the catalog. Could take a while ... Done
+
+Processing sim_object sys
+Looking for structure EXECUTIVE... (found Trick libs)
+Looking for module input_processor...(found directory catalog)
+Looking for module var_server_sync...(found directory catalog)
+
+Processing sim_object dyn
+Looking for structure ORGANS... (found new/updated)
+Looking for structure INTEGRATOR... (found Trick libs)
+Looking for module organ_init...(found cache)
+Looking for module concentration_deriv...(found cache)
+Looking for module organ_integ...(found cache)
+
+Completed parsing S_define
+
+Determining structure dependencies.
+ICG'ing out of date header files...
+ICG /home/Alex/trick_models/bio/organs/include/organs.h
+
+   Processing /home/Alex/trick_models/bio/organs/include/organ_params.h (C)
+   Processing /home/Alex/trick_models/bio/organs/include/organs.h (C)
+
+ICG Complete
+
+
+All ICGs complete
+Determining module dependencies.
+MIS-ing all src files... 
+   Processing /home/Alex/trick_models/bio/organs/src/organ_init.c
+      Processing organ_init
+      Processed (job_class = N/A) int  organ_init(ORGANS*)
+   Processing /home/Alex/trick_models/bio/organs/src/concentration_deriv.c
+      Processing concentration_deriv
+      Processed (job_class = N/A) int  concentration_deriv(ORGANS*)
+   Processing /home/Alex/trick_models/bio/organs/src/organ_integ.c
+      Processing organ_integ
+      Processed (job_class = N/A) int  organ_integ(INTEGRATOR*,ORGANS*)
+
+MIS complete
+
+Removing existing Makefile...  Complete
+Creating New Makefile...  Complete
+Creating S_source.c... Complete
+Creating Default_data... Complete
+Creating S_document.xml... Complete
+Adding makedepend dependencies [1 dir(s)]
+   1. Adding dependencies for src files in /home/Alex/trick_models/bio/organs
+   2. Adding dependencies for S_source.c
+
+Appended dependencies to Makefile
+cd /home/Alex/trick_models/bio/organs/src/ ; cc   -I/home/Alex/trick_models -DTRICK_VER=07 -DTRICK_MINOR=23 -I/home/Alex/Downloads/07.23.1/trick_source -I../include  -c concentration_deriv.c -o /home/Alex/trick_models/bio/organs/object_Linux_4.1_25/concentration_deriv.o
+cd /home/Alex/trick_models/bio/organs/src/ ; cc   -I/home/Alex/trick_models -DTRICK_VER=07 -DTRICK_MINOR=23 -I/home/Alex/Downloads/07.23.1/trick_source -I../include  -c organ_init.c -o /home/Alex/trick_models/bio/organs/object_Linux_4.1_25/organ_init.o
+cd /home/Alex/trick_models/bio/organs/src/ ; cc   -I/home/Alex/trick_models -DTRICK_VER=07 -DTRICK_MINOR=23 -I/home/Alex/Downloads/07.23.1/trick_source -I../include  -c organ_integ.c -o /home/Alex/trick_models/bio/organs/object_Linux_4.1_25/organ_integ.o
+cd /home/Alex/trick_models/bio/organs ; cc   -I/home/Alex/trick_models -DTRICK_VER=07 -DTRICK_MINOR=23 -I/home/Alex/Downloads/07.23.1/trick_source -I../include  -c io_src/io_organ_params.c -o /home/Alex/trick_models/bio/organs/object_Linux_4.1_25/io_organ_params.o
+cd /home/Alex/trick_models/bio/organs ; cc   -I/home/Alex/trick_models -DTRICK_VER=07 -DTRICK_MINOR=23 -I/home/Alex/Downloads/07.23.1/trick_source -I../include  -c io_src/io_organs.c -o /home/Alex/trick_models/bio/organs/object_Linux_4.1_25/io_organs.o
+ln -f -s /home/Alex/trick_models/bio/organs/object_Linux_4.1_25/concentration_deriv.o lib_Linux_4.1_25/o0.o
+ln -f -s /home/Alex/trick_models/bio/organs/object_Linux_4.1_25/organ_init.o lib_Linux_4.1_25/o1.o
+ln -f -s /home/Alex/trick_models/bio/organs/object_Linux_4.1_25/organ_integ.o lib_Linux_4.1_25/o2.o
+ln -f -s /home/Alex/trick_models/bio/organs/object_Linux_4.1_25/io_organ_params.o lib_Linux_4.1_25/i0.o
+ln -f -s /home/Alex/trick_models/bio/organs/object_Linux_4.1_25/io_organs.o lib_Linux_4.1_25/i1.o
+cc   -I/home/Alex/trick_models -DTRICK_VER=07 -DTRICK_MINOR=23 -I/home/Alex/Downloads/07.23.1/trick_source -I../include  -c S_source.c -o lib_Linux_4.1_25/S_source.o
+Verifying sim checksums...
+cc   -I/home/Alex/trick_models -DTRICK_VER=07 -DTRICK_MINOR=23 -I/home/Alex/Downloads/07.23.1/trick_source -I../include  -c S_checksums.c -o lib_Linux_4.1_25/S_checksums.o
+ar crs lib_Linux_4.1_25/lib_sim_objs.a lib_Linux_4.1_25/*.o
+cc  -I/home/Alex/trick_models -DTRICK_VER=07 -DTRICK_MINOR=23 -I/home/Alex/Downloads/07.23.1/trick_source -I../include -o S_main_Linux_4.1_25.exe \
+		/home/Alex/Downloads/07.23.1/lib_Linux_4.1_25/master.o\
+		/home/Alex/Downloads/07.23.1/lib_Linux_4.1_25/libtrick.a\
+		lib_Linux_4.1_25/lib_sim_objs.a\
+		  \
+		  \
+		/home/Alex/Downloads/07.23.1/lib_Linux_4.1_25/libtrick.a -lm -lrt
+Generating S_sie.resource...
+./S_main_Linux_4.1_25.exe sie
+
+Created S_sie.resource file.
+
+=== Simulation make complete ===

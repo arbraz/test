@@ -1,0 +1,35 @@
+/*****************************************************************************
+PURPOSE:    ( Try Trick integration )
+*****************************************************************************/
+#include "sim_services/include/integrator.h"
+#include "../include/cannon.h"
+
+int cannon_integ(
+      INTEGRATOR *I,
+      CANNON* C )
+{
+
+        /* Load current states */
+        I->state[0] = C->pos[0] ;
+        I->state[1] = C->pos[1] ;
+        I->state[2] = C->vel[0] ;
+        I->state[3] = C->vel[1] ;
+
+        /* Load derivatives */
+        I->deriv[I->intermediate_step][0] = C->vel[0] ;
+        I->deriv[I->intermediate_step][1] = C->vel[1] ;
+        I->deriv[I->intermediate_step][2] = C->acc[0] ;
+        I->deriv[I->intermediate_step][3] = C->acc[1] ;
+
+        /* Call the Trick integrator */
+        integrate( I ) ;
+
+        /* Unload new states */
+        C->pos[0] = I->state_ws[I->intermediate_step][0] ;
+        C->pos[1] = I->state_ws[I->intermediate_step][1] ;
+        C->vel[0] = I->state_ws[I->intermediate_step][2] ;
+        C->vel[1] = I->state_ws[I->intermediate_step][3] ;
+
+        /* Return step.  Used for multi-pass integration */
+        return ( I->intermediate_step ) ;
+}

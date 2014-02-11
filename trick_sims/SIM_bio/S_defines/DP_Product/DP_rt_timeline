@@ -1,0 +1,14 @@
+Job Execution Timeline
+PLOTS:
+Page 1: "Execution Timelines"
+Plot 1: "Parent Execution Time"
+X_axis_label: "Real Time"
+Y_axis_label: "Job ID"
+X_variable: "job_times[0]" label:"Real Time"
+Y_variable: "job_time_ids[0]"  label:"Job ID"
+            line_color:red
+
+TABLES:
+Table 1: "Parent Execution Timeline"
+Variable: "job_times[0]" label:"Real Time" format: "%13.6f"
+Variable: "job_time_ids[0]" label:"Job ID"

@@ -1,0 +1,60 @@
+Memory Allocation History
+PLOTS:
+Page 1: "Current Memory Stats"
+Plot 1: "Current Memory Allocation"
+X_axis_label:"Sim Time"
+Y_axis_label:"Cuurent Memory size"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.alloc_stats.alloc_current"  label:"Current Allocation Size"
+            units:"--" line_style:PLAIN line_color:red
+Plot 2: "Current Number of Allocations"
+X_axis_label:"Sim Time"
+Y_axis_label:"Cuurent Num of Allocs"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.alloc_stats.num_alloc_current"  label:"Current Num of Allocs"
+            units:"--" line_style:PLAIN line_color:red
+
+Page 2: "Maximum Memory Stats"
+Plot 1: "Maximum Memory Allocation"
+X_axis_label:"Sim Time"
+Y_axis_label:"Maximum Memory size"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.alloc_stats.alloc_max"  label:"Maximum Allocation Size"
+            units:"--" line_style:PLAIN line_color:red
+Plot 2: "Maximum Number of Allocations"
+X_axis_label:"Sim Time"
+Y_axis_label:"Maximum Num of Allocs"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.alloc_stats.num_alloc_max"  label:"Maximum Num of Allocs"
+            units:"--" line_style:PLAIN line_color:red
+
+Page 3: "Total Memory Stats"
+Plot 1: "Total Memory Allocation"
+X_axis_label:"Sim Time"
+Y_axis_label:"Total Memory size"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.alloc_stats.alloc_total"  label:"Total Allocation Size"
+            units:"--" line_style:PLAIN line_color:red
+Plot 2: "Total Number of Allocations"
+X_axis_label:"Sim Time"
+Y_axis_label:"Total Num of Allocs"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.alloc_stats.num_alloc_total"  label:"Total Num of Allocs"
+            units:"--" line_style:PLAIN line_color:red
+
+TABLES:
+Table 1: "Real-Time Frame Overrun/Underrun History"
+Variable: "sys.exec.out.time" label:"Sim Time" format: "%13.6f"
+Variable: "sys.exec.out.alloc_stats.alloc_current" label:"Current Allocation Size" format: "%13.6f"
+Variable: "sys.exec.out.alloc_stats.num_alloc_current" label:"Current Num of Allocs" format: "%13.6f"
+Variable: "sys.exec.out.alloc_stats.alloc_max" label:"Max Allocation Size" format: "%13.6f"
+Variable: "sys.exec.out.alloc_stats.num_alloc_max" label:"Max Num of Allocs" format: "%13.6f"
+Variable: "sys.exec.out.alloc_stats.alloc_total" label:"Total Allocation Size" format: "%13.6f"
+Variable: "sys.exec.out.alloc_stats.num_alloc_total" label:"Total Num of Allocs" format: "%13.6f"
+

@@ -1,0 +1,44 @@
+No title specified
+
+PLOTS:
+
+PAGE 1: "Page"
+
+    PLOT 1: "Plot"
+        Y_AXIS_FORMAT: "%g"
+
+        X_variable: "sys.exec.out.time"
+            UNITS: "s"
+            TIME_NAME: "sys.exec.out.time"
+            LABEL: "sys.exec.out.time"
+
+        Y_variable: "dyn.organs.Cli"
+            UNITS: "--"
+            LABEL: "dyn.organs.Cli"
+            TIME_NAME: "sys.exec.out.time"
+
+    PLOT 2: "Plot"
+        Y_AXIS_FORMAT: "%g"
+
+        X_variable: "sys.exec.out.time"
+            UNITS: "s"
+            TIME_NAME: "sys.exec.out.time"
+            LABEL: "sys.exec.out.time"
+
+        Y_variable: "dyn.organs.Clu"
+            UNITS: "--"
+            LABEL: "dyn.organs.Clu"
+            TIME_NAME: "sys.exec.out.time"
+
+    PLOT 3: "Plot"
+        Y_AXIS_FORMAT: "%g"
+
+        X_variable: "sys.exec.out.time"
+            UNITS: "s"
+            TIME_NAME: "sys.exec.out.time"
+            LABEL: "sys.exec.out.time"
+
+        Y_variable: "dyn.organs.Cm"
+            UNITS: "--"
+            LABEL: "dyn.organs.Cm"
+            TIME_NAME: "sys.exec.out.time"

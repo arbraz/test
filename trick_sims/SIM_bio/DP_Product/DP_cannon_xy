@@ -1,0 +1,17 @@
+Quickplot
+
+PLOTS:
+
+
+PAGE 1: ""
+   start: -1.0e20
+
+   PLOT 1: "Plot"
+      X_VARIABLE: "dyn.cannon.pos[0]"
+         LABEL:  "pos[0]"
+         UNITS:  "M"
+      Y_VARIABLE: "dyn.cannon.pos[1]"
+         SYMBOL_SIZE: Tiny
+         SYMBOL_STYLE: Circle
+         LABEL:  "pos[1]"
+         UNITS:  "M"

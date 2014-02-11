@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="/home/Alex/Downloads/07.23.1/docs/trick_struct.xsl"?>
+
+<!--Note:
+    Firefox 3 fails to process XSLT files if they are on the local hard drive
+    plus outside of the current XML file's path (or descendant paths). Users
+    may need to edit $HOME/.mozilla/firefox/*.default/prefs.js and add a new
+    URI setting in order to properly view this file in a firefox browser:
+    - user_pref("security.fileuri.strict_origin_policy", false);
+    OR
+    - type about:config in the address bar
+    - change security.fileuri.strict_origin_policy to false
+-->
+
+<file>
+    <file_name> organs.h </file_name>
+    <full_path_file_name> /home/Alex/trick_models/bio/organs/include/organs.h </full_path_file_name>
+    <trick_header>
+        <references>
+        </references>
+        <assumptions>
+        </assumptions>
+        <requirements>
+        </requirements>
+        <library_dependencies>
+        </library_dependencies>
+        <purpose> Organ Structure </purpose>
+        <class></class>
+        <modifications>
+        </modifications>
+    </trick_header>
+
+    <enumerations>
+    </enumerations>
+
+    <structures>
+        <struct>
+            <struct_name>ORGANS</struct_name>
+            <member>
+                <pname>Cli</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Concentration in liver</comment>
+            </member>
+            <member>
+                <pname>Clu</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Concentration in lung</comment>
+            </member>
+            <member>
+                <pname>Cm</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Concentration in tissue</comment>
+            </member>
+            <member>
+                <pname>dC_liver_dt</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Concentration rate in liver</comment>
+            </member>
+            <member>
+                <pname>dC_lung_dt</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Concentration rate in lung</comment>
+            </member>
+            <member>
+                <pname>dC_tissue_dt</pname>
+                <type>double</type>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Concentration rate in medium tissue</comment>
+            </member>
+            <member>
+                <pname>params</pname>
+                <type>params_T</type>
+                <link>/home/Alex/trick_models/bio/organs/xml/organ_params.h.xml</link>
+                <dims>scalar</dims>
+                <units>m</units>
+                <comment>test</comment>
+            </member>
+            <member>
+                <pname>rf</pname>
+                <type>REGULA_FALSI</type>
+                <link>/home/Alex/Downloads/07.23.1/trick_source/sim_services/include/xml/regula_falsi.h.xml</link>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Dynamic event params for impact</comment>
+            </member>
+            <member>
+                <pname>connection</pname>
+                <type>TCDevice</type>
+                <link>/home/Alex/Downloads/07.23.1/trick_source/trick_utils/comm/xml/tc.h.xml</link>
+                <dims>scalar</dims>
+                <units>--</units>
+                <comment>Socket connection for sending position</comment>
+            </member>
+        </struct>
+
+    </structures>
+
+</file>

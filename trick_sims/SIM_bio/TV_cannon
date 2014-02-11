@@ -1,0 +1,4 @@
+dyn.cannon.init_angle {r} = 0.5235987755982989 ;
+dyn.cannon.pos[0] {M} = 0 ;
+dyn.cannon.pos[1] {M} = 0 ;
+dyn.cannon.init_speed {M/s} = 50 ;

@@ -1,0 +1,218 @@
+
+/* $Id: S_source.c auto 2013/09/29 21:26:09 user *//*
+TITLE: No Title Specified
+DATE:  Sun Sep 29 21:26:09 2013
+USER:  user
+*/
+
+
+sys.exec.work.initialization_pass = 1 ;
+sys.exec.work.num_child = 0 ;
+sys.exec.work.num_job = 3 ;
+sys.exec.work.num_all_job = 6 ;
+sys.exec.work.job_select = alloc(2) ;
+sys.exec.work.job_complete = alloc(3) ;
+sys.exec.work.job_que = alloc(2) ;
+sys.exec.work.job_que[0] = alloc(3) ;
+sys.exec.work.job_que[1] = alloc(3) ;
+
+sys.exec.work.job_que_id = alloc(2) ;
+sys.exec.work.num_jobs_on_que = alloc(2) ;
+sys.exec.work.start_child_queue = alloc(2) ;
+sys.exec.work.child_complete = alloc(2) ;
+sys.exec.in.rt_cpu_number = alloc(2) ;
+sys.exec.in.rt_lock_to_cpu = alloc(2) ;
+sys.exec.in.rt_lock_memory = alloc(2) ;
+sys.exec.in.rt_nond_pri = alloc(2) ;
+sys.exec.in.rt_priority = alloc(2) ;
+sys.exec.in.rt_isolate_proc = alloc(2) ;
+sys.exec.in.rt_restrict_proc = alloc(2) ;
+sys.exec.in.rt_nonpreempt_proc = alloc(2) ;
+sys.exec.in.rt_semaphores = alloc(2) ;
+sys.exec.work.process_type = alloc(2) ;
+sys.exec.work.child_complete[0] = Yes , Yes ;
+sys.exec.in.rt_cpu_number[0] = 0 , 0 ;
+sys.exec.in.rt_lock_to_cpu[0] = No , No ;
+sys.exec.in.rt_lock_memory[0] = No , No ;
+sys.exec.in.rt_nond_pri[0] = No , No ;
+sys.exec.in.rt_priority[0] = 20 , 20 ;
+sys.exec.in.rt_isolate_proc[0] = No , No ;
+sys.exec.in.rt_restrict_proc[0] = No , No ;
+sys.exec.in.rt_nonpreempt_proc[0] = No , No ;
+sys.exec.in.rt_semaphores[0] = No , No ;
+sys.exec.in.frame_log = No ;
+sys.exec.out.frame_job_time = alloc(3) ;
+sys.exec.out.frame_sched_times = alloc(2) ;
+sys.exec.work.frame_last_time = alloc(2) ;
+sys.exec.record.directory = "" ;
+sys.exec.record.group = alloc(16) ;
+for ( int i = 0 ; i < 16 ; i++ ) {
+   sys.exec.record.group[i].ref = alloc(128) ;
+   sys.exec.record.group[i].change_ref = alloc(128) ;
+   sys.exec.record.group[i].ascii_label = alloc(128) ;
+}
+sys.exec.rt_log.directory = "" ;
+sys.exec.rt_log.terminate_on_bad_ref = Yes ;
+sys.exec.rt_log.num_group = 3 ;
+sys.exec.rt_log.group = alloc(3) ;
+sys.exec.rt_log.group[0].record = No ;
+sys.exec.rt_log.group[0].name   = "frame" ;
+sys.exec.rt_log.group[0].format = DR_Binary ;
+sys.exec.rt_log.group[0].freq   = DR_Always ;
+sys.exec.rt_log.group[0].cycle {s} = 1.0e-6 ;
+sys.exec.rt_log.group[0].ref = alloc(11) ;
+sys.exec.rt_log.group[0].ref[0] =
+    "sys.exec.out.frame_sched_time" ,
+    "sys.exec.out.amf_wait_time" ,
+    "sys.exec.out.child_start_wait_time" ,
+    "sys.exec.out.child_complete_wait_time" ,
+    "sys.exec.out.depends_on_wait_time" ,
+    "sys.exec.out.data_rec_time" ,
+    "sys.exec.out.master_sync_time" ,
+    "sys.exec.out.slave_sync_time" ,
+    "sys.exec.out.frame_overrun_time" ;
+
+sys.exec.rt_log.group[1].record = No ;
+sys.exec.rt_log.group[1].name   = "jobs" ;
+sys.exec.rt_log.group[1].format = DR_Binary ;
+sys.exec.rt_log.group[1].freq   = DR_Always ;
+sys.exec.rt_log.group[1].cycle {s} = 1.0e-6 ;
+sys.exec.rt_log.group[1].ref = alloc(2) ;
+sys.exec.rt_log.group[1].ref[0] =
+    "sys.exec.out.frame_sched_times[1-1]" ,
+    "sys.exec.out.frame_job_time[0-2]" ;
+
+sys.exec.rt_log.group[2].record = No ;
+sys.exec.rt_log.group[2].name   = "mem_stats" ;
+sys.exec.rt_log.group[2].format = DR_Binary ;
+sys.exec.rt_log.group[2].freq   = DR_Always ;
+sys.exec.rt_log.group[2].cycle {s} = 1.0e-6 ;
+sys.exec.rt_log.group[2].ref = alloc(6) ;
+sys.exec.rt_log.group[2].ref[0] =
+    "sys.exec.out.alloc_stats.alloc_current" ,
+    "sys.exec.out.alloc_stats.num_alloc_current" ,
+    "sys.exec.out.alloc_stats.alloc_max" ,
+    "sys.exec.out.alloc_stats.num_alloc_max" ,
+    "sys.exec.out.alloc_stats.alloc_total" ,
+    "sys.exec.out.alloc_stats.num_alloc_total" ;
+
+sys.job[2].in.job_select = 0 ;
+sys.job[2].in.job_class = 3 ;	/* dyn State Integration */
+sys.job[2].in.phase = 60000 ;
+sys.job[2].in.name = "sys.integrator(dyn)" ;
+sys.job[2].in.cycle = 0.01 ;
+sys.job[2].in.start = 0.0 ;
+sys.job[2].in.stop = 1.0e37 ;
+sys.job[2].in.process_id = 1 ;
+sys.job[2].in.job_count = 0 ;
+sys.job[2].in.enabled = 1 ;
+sys.job[2].in.num_job_depend = 0 ;
+sys.job[2].in.job_depend = alloc(1) ;
+sys.job[2].in.job_depend[0] = 0 ;
+
+sys.job[0].in.job_select = 1 ;
+sys.job[0].in.job_class = 6 ;	/* automatic */
+sys.job[0].in.phase = 60000 ;
+sys.job[0].in.name = "sys.input_processor(&sys.exec)" ;
+sys.job[0].in.old_style_name = "sys.input_processor(sys.exec)" ;
+sys.job[0].in.tag = "" ;
+sys.job[0].in.cycle = 1e-08 ;
+sys.job[0].in.start = 0 ;
+sys.job[0].in.stop = 1e+37 ;
+sys.job[0].in.process_id = 1 ;
+sys.job[0].in.job_count = 1 ;
+sys.job[0].in.enabled = 1 ;
+sys.job[0].in.num_job_depend = 0 ;
+sys.job[0].in.job_depend = alloc(1) ;
+sys.job[0].in.job_depend[0] = 0 ;
+
+sys.job[1].in.job_select = 2 ;
+sys.job[1].in.job_class = 19 ;	/* automatic_last */
+sys.job[1].in.phase = 60000 ;
+sys.job[1].in.name = "sys.var_server_sync(&sys.exec)" ;
+sys.job[1].in.old_style_name = "sys.var_server_sync(sys.exec)" ;
+sys.job[1].in.tag = "" ;
+sys.job[1].in.cycle = 1e-08 ;
+sys.job[1].in.start = 0 ;
+sys.job[1].in.stop = 1e+37 ;
+sys.job[1].in.process_id = 1 ;
+sys.job[1].in.job_count = 2 ;
+sys.job[1].in.enabled = 1 ;
+sys.job[1].in.num_job_depend = 0 ;
+sys.job[1].in.job_depend = alloc(1) ;
+sys.job[1].in.job_depend[0] = 0 ;
+
+	/* DEFAULT_DATA JOB DATA */
+
+	/* INITIALIZATION JOB DATA */
+
+dyn.job[0].in.job_select = 3 ;
+dyn.job[0].in.job_class = 0 ;
+dyn.job[0].in.phase = 60000 ;
+dyn.job[0].in.name = "dyn.organ_init(&dyn.organs)" ;
+dyn.job[0].in.old_style_name = "dyn.organ_init(dyn.organs)" ;
+dyn.job[0].in.tag = "" ;
+dyn.job[0].in.start = 0.0 ;
+dyn.job[0].in.process_id = 1 ;
+dyn.job[0].in.job_count = 3 ;
+dyn.job[0].in.enabled = 1 ;
+dyn.job[0].in.num_job_depend = 0 ;
+dyn.job[0].in.job_depend = alloc(1) ;
+dyn.job[0].in.job_depend[0] = 0 ;
+
+	/* RESTART JOB DATA */
+
+	/* FREEZE AND INTEGRATE JOBS */
+dyn.job[1].in.job_select = 4 ;
+dyn.job[1].in.job_class = 2 ;
+dyn.job[1].in.phase = 60000 ;
+dyn.job[1].in.name = "dyn.concentration_deriv(&dyn.organs)" ;
+dyn.job[1].in.old_style_name = "dyn.concentration_deriv(dyn.organs)" ;
+dyn.job[1].in.tag = "" ;
+dyn.job[1].in.start = 0.0 ;
+dyn.job[1].in.process_id = 1 ;
+dyn.job[1].in.job_count = 4 ;
+dyn.job[1].in.enabled = 1 ;
+dyn.job[1].in.num_job_depend = 0 ;
+dyn.job[1].in.job_depend = alloc(1) ;
+dyn.job[1].in.job_depend[0] = 0 ;
+
+dyn.job[2].in.job_select = 5 ;
+dyn.job[2].in.job_class = 3 ;
+dyn.job[2].in.phase = 60000 ;
+dyn.job[2].in.name = "dyn.organ_integ(&dyn.integ)" ;
+dyn.job[2].in.old_style_name = "dyn.organ_integ(dyn.integ)" ;
+dyn.job[2].in.tag = "" ;
+dyn.job[2].in.start = 0.0 ;
+dyn.job[2].in.process_id = 1 ;
+dyn.job[2].in.job_count = 5 ;
+dyn.job[2].in.enabled = 1 ;
+dyn.job[2].in.num_job_depend = 0 ;
+dyn.job[2].in.job_depend = alloc(1) ;
+dyn.job[2].in.job_depend[0] = 0 ;
+
+	/* CHECKPOINT JOB DATA */
+	/* PRE_LOAD_CHECKPOINT JOB DATA */
+	/* MONTE_MASTER_INIT JOB DATA */
+	/* MONTE_MASTER_PRE JOB DATA */
+	/* MONTE_MASTER_POST JOB DATA */
+	/* MONTE_MASTER_SHUTDOWN JOB DATA */
+	/* MONTE_SLAVE_INIT JOB DATA */
+	/* MONTE_SLAVE_PRE JOB DATA */
+	/* MONTE_SLAVE_POST JOB DATA */
+	/* MONTE_SLAVE_SHUTDOWN JOB DATA */
+	/* MALFUNCTION JOB DATA */
+	/* MALFUNCTION_TRIGGER JOB DATA */
+	/* SHUTDOWN JOB DATA */
+/* DEFAULT DATA FILES FROM S_define */
+
+#include "Default_data/S_sys_exec_executive.d"
+#include "Default_data/S_dyn_organs_organs.d"
+#include "Default_data/S_dyn_integ_organ_integ.d"
+
+sys.exec.work.terminate_time  = 1.0e20 ;
+sys.exec.work.checkpoint_time = 1.0e20 ;
+sys.exec.work.freeze_time     = 1.0e20 ;
+
+
+sys.exec.impexp.enabled = alloc(0) ;

@@ -1,0 +1,11 @@
+#include "S_default.dat"
+#include "Modified_data/realtime.d"
+#include "Modified_data/cannon.dr"
+
+sys.exec.sim_com.panel_size = Panel_Size_Lite ;
+sys.exec.in.stripchart_input_file = "cannon.sc" ;
+
+sys.exec.in.tv = On ;
+sys.exec.in.tv_input_file = "cannon.tv" ;
+
+stop = 5.2 ;

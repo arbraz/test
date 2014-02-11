@@ -1,0 +1,77 @@
+Real-Time Frame Overrun/Underrun History
+PLOTS:
+Page 1: "Real-Time Scheduling Frame"
+Plot 1: "Frame Overrun/Underrun"
+X_axis_label:"Sim Time"
+Y_axis_label:"Frame Overrun/Underrun"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.frame_overrun_time"  label:"overrun/underrun"
+            units:"s" line_style:PLAIN line_color:red
+Plot 2: "Frame Scheduling Time"
+X_axis_label:"Sim Time"
+Y_axis_label:"Exec Sched"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.frame_sched_time"  label:"Exec Sched Time"
+            units:"s" line_style:PLAIN line_color:red
+Page 2: "Real-Time Scheduling Frame Components"
+Plot 1: "AMF Wait Time"
+X_axis_label:"Sim Time"
+Y_axis_label:"AMF Wait Time"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.amf_wait_time"  label:"AMF Wait Time"
+            units:"s" line_style:PLAIN line_color:red
+Plot 2: "Child Start Wait Time"
+X_axis_label:"Sim Time"
+Y_axis_label:"Child Start Wait Time"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.child_start_wait_time"  label:"Child Start Wait Time"
+            units:"s" line_style:PLAIN line_color:red
+Page 3: "Real-Time Scheduling Frame Components"
+Plot 1: "Child Complete Wait Time"
+X_axis_label:"Sim Time"
+Y_axis_label:"Child Complete Wait Time"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.child_complete_wait_time"  label:"Child Complete Wait Time"
+            units:"s" line_style:PLAIN line_color:red
+Plot 2: "Depends on Wait Time"
+X_axis_label:"Sim Time"
+Y_axis_label:"Depends on Wait Time"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.depends_on_wait_time"  label:"Depends on Wait Time"
+            units:"s" line_style:PLAIN line_color:red
+Page 4: "Real-Time Scheduling Frame Components"
+Plot 1: "Master Sync Time"
+X_axis_label:"Sim Time"
+Y_axis_label:"Master Sync Time"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.master_sync_time"  label:"Master Sync Time"
+            units:"s" line_style:PLAIN line_color:red
+Plot 2: "Slave Sync Time"
+X_axis_label:"Sim Time"
+Y_axis_label:"Slave Sync Time"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.slave_sync_time"  label:"Slave Sync Time"
+            units:"s" line_style:PLAIN line_color:red
+Page 5: "Real-Time Scheduling Frame Components"
+Plot 1: "Data Recording Time"
+X_axis_label:"Sim Time"
+Y_axis_label:"Data Recording Time"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.data_rec_time"  label:"Data Record Wait Time"
+            units:"s" line_style:PLAIN line_color:red
+
+TABLES:
+Table 1: "Real-Time Frame Overrun/Underrun History"
+Variable: "sys.exec.out.time" label:"Sim Time" format: "%13.6f"
+Variable: "sys.exec.out.frame_overrun_time" label:"overrun/underrun" format: "%13.6f"
+Variable: "sys.exec.out.frame_sched_time" label:"Exec Sched Time" format: "%13.6f"
+

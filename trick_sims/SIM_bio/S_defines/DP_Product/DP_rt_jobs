@@ -1,0 +1,58 @@
+Job Execution Time History
+PLOTS:
+Page 1: "Job Execution Times"
+Plot 1: "sys.integrator(dyn)"
+X_axis_label:"Time"
+Y_axis_label:"Execution Time"
+grid: Yes
+X_variable: "sys.exec.out.time" label:"Time"
+Y_variable: "sys.exec.out.frame_job_time[0]" label:"sys.integrator(dyn)"
+            line_style:PLAIN line_color:red
+Plot 2: "sys.input_processor(&sys.exec)"
+X_axis_label:"Time"
+Y_axis_label:"Execution Time"
+grid: Yes
+X_variable: "sys.exec.out.time" label:"Time"
+Y_variable: "sys.exec.out.frame_job_time[1]" label:"sys.input_processor(&sys.exec)"
+            line_style:PLAIN line_color:red
+Plot 3: "sys.var_server_sync(&sys.exec)"
+X_axis_label:"Time"
+Y_axis_label:"Execution Time"
+grid: Yes
+X_variable: "sys.exec.out.time" label:"Time"
+Y_variable: "sys.exec.out.frame_job_time[2]" label:"sys.var_server_sync(&sys.exec)"
+            line_style:PLAIN line_color:red
+
+Page 2: "Executive Overhead"
+Plot 1: "Data Recording"
+X_axis_label:"Time"
+Y_axis_label:"Execution Time"
+grid: Yes
+X_variable: "sys.exec.out.time" label:"Time"
+Y_variable: "sys.exec.out.data_rec_time" label:"Data Recording"
+            line_style:PLAIN line_color:red
+Plot 2: "Master Sync"
+X_axis_label:"Time"
+Y_axis_label:"Execution Time"
+grid: Yes
+X_variable: "sys.exec.out.time" label:"Time"
+Y_variable: "sys.exec.out.master_sync_time" label:"Master Sync"
+            line_style:PLAIN line_color:red
+Plot 3: "Slave Sync"
+X_axis_label:"Time"
+Y_axis_label:"Execution Time"
+grid: Yes
+X_variable: "sys.exec.out.time" label:"Time"
+Y_variable: "sys.exec.out.slave_sync_time" label:"Slave Sync"
+            line_style:PLAIN line_color:red
+
+TABLES:
+
+Table 1: "Job Execution Times"
+Variable: "sys.exec.out.time" label:"Time" format: "%13.6f"
+Variable: "sys.exec.out.frame_job_time[0]" label:"sys.integrator(dyn)" format: "%13.6f"
+Variable: "sys.exec.out.frame_job_time[1]" label:"sys.input_processor(&sys.exec)" format: "%13.6f"
+Variable: "sys.exec.out.frame_job_time[2]" label:"sys.var_server_sync(&sys.exec)" format: "%13.6f"
+Variable: "sys.exec.out.data_rec_time" label:"DataRecTime" format: "%13.6f"
+Variable: "sys.exec.out.master_sync_time" label:"MasterSyncTime" format: "%13.6f"
+Variable: "sys.exec.out.slave_sync_time" label:"SlaveSyncTime" format: "%13.6f"

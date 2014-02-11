@@ -1,0 +1,32 @@
+sim_object
+{
+        sim_services/include: 
+            EXECUTIVE exec (sim_services/include/executive.d) ;
+
+        (automatic) sim_services/input_processor: 
+            input_processor( INPUT_PROCESSOR * IP = &sys.exec.ip ) ;
+
+        (automatic_last) sim_services/exec:
+                 var_server_sync( Inout EXECUTIVE * E = &sys.exec ) ;
+
+} sys ;
+
+sim_object
+{
+        bio/organs: ORGANS organs (bio/organs/include/organs.d) ;
+ sim_services/include: INTEGRATOR integ
+                 (bio/organs/include/organ_integ.d) ;
+
+        (initialization) bio/organs:
+             organs_init( ORGANS* O = &dyn.organs ) ;
+
+        (derivative) bio/concentration_deriv:
+             concentration_deriv( ORGANS* ) = &dyn.organs ) ;
+
+        (integration) bio/organs:
+             organ_integ(
+                      INTEGRATOR* I = &dyn.integ,
+                      ORGANS* O = &dyn.organs ) ;
+}dyn;
+integrate (0.01) dyn;
+

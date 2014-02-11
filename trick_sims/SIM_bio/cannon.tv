@@ -1,0 +1,10 @@
+TV:
+   geometry = +0+300
+   title = "TV Position"
+   auto_load = view
+   auto_start = 1
+   dyn.cannon.pos[0] = 0
+   dyn.cannon.pos[1] = 0
+   dyn.cannon.init_angle = 0
+   dyn.cannon.init_speed = 0
+

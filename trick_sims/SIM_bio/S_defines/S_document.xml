@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="/home/user/trick/07.23.1/docs/trick_s_define.xsl"?>
+
+<!--Note:
+    Firefox 3 fails to process XSLT files if they are on the local hard drive
+    plus outside of the current XML file's path (or descendant paths). Users
+    may need to edit $HOME/.mozilla/firefox/*.default/prefs.js and add a new
+    URI setting in order to properly view this file in a firefox browser:
+    - user_pref("security.fileuri.strict_origin_policy", false);
+    OR
+    - type about:config in the address bar
+    - change security.fileuri.strict_origin_policy to false
+-->
+
+<s_define>
+    <title>No Title Specified</title>
+    <sim_object>
+        <sim_object_name>dyn</sim_object_name>
+
+        <structs>
+            <struct>
+                <struct_name>INTEGRATOR</struct_name>
+                <link>/home/user/trick/07.23.1/trick_source/sim_services/include/xml/integrator.h.xml</link>
+                <default_data>
+                    <file>/home/user/trick/07.23.1/trick_models/bio/organs/include/organ_integ.d</file>
+                </default_data>
+            </struct>
+            <struct>
+                <struct_name>ORGANS</struct_name>
+                <link>/home/user/trick/07.23.1/trick_models/bio/organs/xml/organs.h.xml</link>
+                <default_data>
+                    <file>/home/user/trick/07.23.1/trick_models/bio/organs/include/organs.d</file>
+                </default_data>
+            </struct>
+        </structs>
+
+        <jobs>
+            <job>
+                <job_name>concentration_deriv</job_name>
+                <link>/home/user/trick/07.23.1/trick_models/bio/organs/xml/concentration_deriv.c.xml</link>
+            </job>
+            <job>
+                <job_name>organ_init</job_name>
+                <link>/home/user/trick/07.23.1/trick_models/bio/organs/xml/organ_init.c.xml</link>
+            </job>
+            <job>
+                <job_name>organ_integ</job_name>
+                <link>/home/user/trick/07.23.1/trick_models/bio/organs/xml/organ_integ.c.xml</link>
+            </job>
+        </jobs>
+    </sim_object>
+
+    <sim_object>
+        <sim_object_name>sys</sim_object_name>
+
+        <structs>
+            <struct>
+                <struct_name>EXECUTIVE</struct_name>
+                <link>/home/user/trick/07.23.1/trick_source/sim_services/include/xml/executive.h.xml</link>
+                <default_data>
+                    <file>/home/user/trick/07.23.1/trick_source/sim_services/include/executive.d</file>
+                </default_data>
+            </struct>
+        </structs>
+
+        <jobs>
+            <job>
+                <job_name>input_processor</job_name>
+                <link>/home/user/trick/07.23.1/trick_source/sim_services/input_processor/xml/input_processor.c.xml</link>
+            </job>
+            <job>
+                <job_name>var_server_sync</job_name>
+                <link>/home/user/trick/07.23.1/trick_source/sim_services/exec/xml/variable_server_sync.c.xml</link>
+            </job>
+        </jobs>
+    </sim_object>
+
+</s_define>

@@ -1,0 +1,97 @@
+No title specified
+
+PLOTS:
+
+PAGE 1: "Concentration"
+
+    PLOT 1: "Liver"
+        Y_AXIS_FORMAT: "%g"
+        Y_AXIS_LABEL: "(mM)"
+        X_AXIS_LABEL: "Time"
+
+        X_variable: "sys.exec.out.time"
+            UNITS: "s"
+            TIME_NAME: "sys.exec.out.time"
+            LABEL: "sys.exec.out.time"
+
+        Y_variable: "dyn.organs.Cli"
+            UNITS: "--"
+            LABEL: "dyn.organs.Cli"
+            TIME_NAME: "sys.exec.out.time"
+
+    PLOT 2: "Lung"
+        Y_AXIS_FORMAT: "%g"
+        Y_AXIS_LABEL: "(mM)"
+        X_AXIS_LABEL: "Time"
+
+        X_variable: "sys.exec.out.time"
+            UNITS: "s"
+            TIME_NAME: "sys.exec.out.time"
+            LABEL: "sys.exec.out.time"
+
+        Y_variable: "dyn.organs.Clu"
+            UNITS: "--"
+            LABEL: "dyn.organs.Clu"
+            TIME_NAME: "sys.exec.out.time"
+
+    PLOT 3: "Medium"
+        Y_AXIS_FORMAT: "%g"
+        Y_AXIS_LABEL: "(mM)"
+        X_AXIS_LABEL: "Time"
+
+        X_variable: "sys.exec.out.time"
+            UNITS: "s"
+            TIME_NAME: "sys.exec.out.time"
+            LABEL: "sys.exec.out.time"
+
+        Y_variable: "dyn.organs.Cm"
+            UNITS: "--"
+            LABEL: "dyn.organs.Cm"
+            TIME_NAME: "sys.exec.out.time"
+
+PAGE 2: "Change in Concentration"
+
+    PLOT 1: "Liver"
+        Y_AXIS_FORMAT: "%g"
+        Y_AXIS_LABEL: "dC/ds"
+        X_AXIS_LABEL: "Time"
+
+        X_variable: "sys.exec.out.time"
+            UNITS: "s"
+            TIME_NAME: "sys.exec.out.time"
+            LABEL: "sys.exec.out.time"
+
+        Y_variable: "dyn.organs.dC_liver_dt"
+            UNITS: "C/s"
+            LABEL: "dyn.organs.dC_liver_dt"
+            TIME_NAME: "sys.exec.out.time"
+
+    PLOT 2: "Lung"
+        Y_AXIS_FORMAT: "%g"
+        Y_AXIS_LABEL: "dC/ds"
+        X_AXIS_LABEL: "Time"
+
+        X_variable: "sys.exec.out.time"
+            UNITS: "s"
+            TIME_NAME: "sys.exec.out.time"
+            LABEL: "sys.exec.out.time"
+
+        Y_variable: "dyn.organs.dC_lung_dt"
+            UNITS: "C/s"
+            LABEL: "dyn.organs.dC_lung_dt"
+            TIME_NAME: "sys.exec.out.time"
+
+    PLOT 3: "Medium"
+        Y_AXIS_FORMAT: "%g"
+        Y_AXIS_LABEL: "dC/ds"
+        X_AXIS_LABEL: "Time"
+
+        X_variable: "sys.exec.out.time"
+            UNITS: "s"
+            TIME_NAME: "sys.exec.out.time"
+            LABEL: "sys.exec.out.time"
+
+        Y_variable: "dyn.organs.dC_tissue_dt"
+            UNITS: "C/s"
+            LABEL: "dyn.organs.dC_tissue_dt"
+            TIME_NAME: "sys.exec.out.time"

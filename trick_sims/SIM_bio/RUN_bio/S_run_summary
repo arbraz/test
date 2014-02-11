@@ -1,0 +1,55 @@
+
+===============================================================================
+General:
+
+Executable called = /home/Alex/trick_sims/SIM_bio/S_main_Linux_4.1_25.exe
+Input file = RUN_bio/input
+S_main build time = Tue Feb 11 15:38:05 2014
+Trick version = 07.23.1-1
+
+===============================================================================
+Build time Environment:
+
+TRICK_CATALOG_HOME = /home/Alex/trick_catalog
+TRICK_CAT_MGR_HOME = /home/Alex/Downloads/07.23.1/catalog
+TRICK_CC = cc
+TRICK_CFLAGS =  -I/home/Alex/trick_models
+TRICK_CPPC = c++
+TRICK_DEBUG = 0
+TRICK_EDITOR = vi
+TRICK_EXEC_LINK_LIBS = 
+TRICK_FORCE_32BIT = 0
+TRICK_GTE_EXT = 
+TRICK_HOME = /home/Alex/Downloads/07.23.1
+TRICK_HOST_CPU = Linux_4.1_25
+TRICK_HOST_CPU_USER_SUFFIX = 
+TRICK_HOST_TYPE = Linux
+TRICK_ICG_EXCLUDE = 
+TRICK_MAKE = 
+TRICK_PATH = /home/Alex/Downloads/07.23.1/bin_Linux_4.1_25:/home/Alex/Downloads/07.23.1/bin
+TRICK_PRINTER_NAME = 
+TRICK_PRINT_CMD = lpr
+TRICK_USER_CSHRC = /home/Alex/.Trick_user_cshrc
+TRICK_USER_HOME = /home/Alex/trick_sims
+TRICK_USER_LINK_LIBS = 
+TRICK_USER_PROFILE = /home/Alex/.Trick_user_profile
+TRICK_VER = 07.23.1
+
+===============================================================================
+Build time model Versions:
+
+
+Legend
+chksum = good , diff(erent) , undef(ined)
+version, owner and RCS date come from RCS log information from each file
+auto = auto generated file, no RCS information available
+
+chksum  version  owner      RCS date            file name
+-------------------------------------------------------------------------------
+undef   --       --         --                  /home/Alex/trick_models/bio/organs/include/organ_integ.d
+undef   --       --         --                  /home/Alex/trick_models/bio/organs/include/organ_params.h
+undef   --       --         --                  /home/Alex/trick_models/bio/organs/include/organs.d
+undef   --       --         --                  /home/Alex/trick_models/bio/organs/include/organs.h
+undef   --       --         --                  /home/Alex/trick_models/bio/organs/src/concentration_deriv.c
+undef   --       --         --                  /home/Alex/trick_models/bio/organs/src/organ_init.c
+undef   --       --         --                  /home/Alex/trick_models/bio/organs/src/organ_integ.c

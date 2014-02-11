@@ -1,0 +1,64 @@
+| |dr1hgh1.bmen.tamu.edu|-1|0.00|2014/02/11,15:38:43| VARIABLE SERVER [TrickClient1]:
+    <get sys.exec.work.terminate_time ;  get sys.exec.in.slave_cnt ;  get sys.exec.work.default_dir ;  get sys.exec.work.cmdline_name ;  get sys.exec.work.input_file ;  var_send; var_clear;>
+
+| |dr1hgh1.bmen.tamu.edu|-1|0.00|2014/02/11,15:38:43| VARIABLE SERVER [TrickClient1]:
+    <sys.exec.sim_com.monitor_on = 1;>
+
+| |dr1hgh1.bmen.tamu.edu|-1|0.00|2014/02/11,15:38:43| VARIABLE SERVER [TrickClient1]:
+    <get sys.exec.in.debugging; var_send; var_clear;>
+
+| |dr1hgh1.bmen.tamu.edu|-1|0.00|2014/02/11,15:38:43| VARIABLE SERVER [TrickClient1]:
+    <get sys.exec.work.run_dir; var_send; var_clear;>
+
+| |dr1hgh1.bmen.tamu.edu|-1|0.00|2014/02/11,15:38:43| VARIABLE SERVER [TrickClient2]:
+    <var_cycle = 0.25 ;>
+
+| |dr1hgh1.bmen.tamu.edu|-1|0.00|2014/02/11,15:38:43| VARIABLE SERVER [TrickClient2]:
+    <var_add sys.exec.out.time ;  var_add sys.exec.work.met_sec_ref ;  var_add sys.exec.work.clock_time ;  var_add sys.exec.work.gmt_sec_ref ;  var_add sys.exec.work.mode ;  var_add sys.exec.out.pre_sync_overruns ;  var_add sys.exec.work.current_phase ;  var_add sys.exec.work.max_phase ;  var_add sys.exec.work.sim_rt_ratio ;  var_add sys.exec.sim_com.data_rec_status ;  var_add sys.exec.in.debugging ;  var_add sys.exec.in.rt_software_frame ;  var_add sys.exec.sim_com.user_freeze_time ;  var_add sys.exec.in.rt_clock_ratio ;  var_add sys.exec.sim_com.monitor_off ; >
+
+| |dr1hgh1.bmen.tamu.edu|-1|0.00|2014/02/11,15:38:43| VARIABLE SERVER [TrickClient1]:
+    <sys.exec.sim_com.send_hs_device.port = 7204;>
+
+| |dr1hgh1.bmen.tamu.edu|-1|0.00|2014/02/11,15:38:43| VARIABLE SERVER [TrickClient1]:
+    <sys.exec.sim_com.bind_complete = 1 ;>
+
+| |dr1hgh1.bmen.tamu.edu|1|0.00|2014/02/11,15:38:43| Freeze ON. Simulation time holding at 0.000000 seconds.
+
+| |dr1hgh1.bmen.tamu.edu|-1|0.00|2014/02/11,15:38:47| VARIABLE SERVER [TrickClient1]:
+    <sys.exec.in.debugging = 0 ;  sys.exec.sim_com.command = RunCmd ;>
+
+| |dr1hgh1.bmen.tamu.edu|-1|0.00|2014/02/11,15:38:47| VARIABLE SERVER [TrickClient1]:
+    <var_signal ;>
+
+| |dr1hgh1.bmen.tamu.edu|1|0.00|2014/02/11,15:38:48| Freeze OFF.
+
+| |dr1hgh1.bmen.tamu.edu|1|50.00|2014/02/11,15:39:38| 
+SIMULATION TERMINATED IN
+  PROCESS: 1
+  JOB/ROUTINE: 2/sim_services/mains/master.c
+DIAGNOSTIC:
+Simulation reached input termination time.
+
+LAST JOB CALLED: sys.var_server_sync(&sys.exec)
+              TOTAL OVERRUNS:            0
+PERCENTAGE REALTIME OVERRUNS:        0.000%
+
+
+       SIMULATION START TIME:        0.000
+        SIMULATION STOP TIME:       50.000
+     SIMULATION ELAPSED TIME:       50.000
+         ACTUAL ELAPSED TIME:       50.000
+        ACTUAL CPU TIME USED:        5.891
+    SIMULATION / ACTUAL TIME:        1.000
+       SIMULATION / CPU TIME:        8.487
+  ACTUAL INITIALIZATION TIME:        0.000
+     INITIALIZATION CPU TIME:        0.014
+*** DYNAMIC MEMORY USAGE ***
+     CURRENT ALLOCATION SIZE:  1850048
+       NUM OF CURRENT ALLOCS:      478
+         MAX ALLOCATION SIZE:  1850506
+           MAX NUM OF ALLOCS:      479
+       TOTAL ALLOCATION SIZE:  2142056
+         TOTAL NUM OF ALLOCS:     2767
+
+

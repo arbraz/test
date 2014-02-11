@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="/home/Alex/Downloads/07.23.1/docs/trick_module.xsl"?>
+
+<!--Note:
+    Firefox 3 fails to process XSLT files if they are on the local hard drive
+    plus outside of the current XML file's path (or descendant paths). Users
+    may need to edit $HOME/.mozilla/firefox/*.default/prefs.js and add a new
+    URI setting in order to properly view this file in a firefox browser:
+    - user_pref("security.fileuri.strict_origin_policy", false);
+    OR
+    - type about:config in the address bar
+    - change security.fileuri.strict_origin_policy to false
+-->
+
+<file>
+    <file_name> concentration_deriv.c </file_name>
+    <full_path_file_name> /home/Alex/trick_models/bio/organs/src/concentration_deriv.c </full_path_file_name>
+    <trick_header>
+        <references>
+        </references>
+        <assumptions>
+        </assumptions>
+        <requirements>
+        </requirements>
+        <library_dependencies>
+        </library_dependencies>
+        <purpose>  Concentration calculation  </purpose>
+        <class></class>
+        <modifications>
+        </modifications>
+    </trick_header>
+
+    <jobs>
+        <job>
+            <job_name> concentration_deriv </job_name>
+            <return_type> int  </return_type>
+            <units> -- </units>
+            <comment> Not Specified </comment>
+            <argument_list>
+                <arg>
+                    <arg_name> O </arg_name>
+                    <type> ORGANS </type>
+                    <dims> *  </dims>
+                    <inout>  </inout>
+                    <units> -- </units>
+                    <comment> Not specified </comment>
+                </arg>
+            </argument_list>
+        </job>
+    </jobs>
+    <includes>
+        <file>#include &lt;stdio.h&gt;</file>
+        <file>#include &quot;../include/organs.h&quot;</file>
+    </includes>
+</file>

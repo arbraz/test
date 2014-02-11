@@ -1,0 +1,16 @@
+I-Timer Frequency Plot
+PLOTS:
+Page 1: "I-Timer Frequency -VS- Sim Time"
+Plot 1: "I-Timer Freq"
+X_axis_label:"Sim Time"
+Y_axis_label:"I-Timer Freq"
+grid: Yes
+X_variable: "sys.exec.out.time"  label:"Sim Time" units:"s"
+Y_variable: "sys.exec.out.itimer_freq"  label:"i-timer freq"
+            units:"s" line_style:PLAIN line_color:red
+
+TABLES:
+Table 1: "I-Timer Frequency -VS- Sim Time"
+Variable: "sys.exec.out.time" label:"Sim Time" format: "%13.6f"
+Variable: "sys.exec.out.itimer_freq" 
+            label:"itimer_freq" format: "%13.6f"

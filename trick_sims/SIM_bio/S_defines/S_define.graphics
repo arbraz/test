@@ -1,0 +1,49 @@
+sim_object
+{
+        sim_services/include: 
+            EXECUTIVE exec (sim_services/include/executive.d) ;
+
+        (automatic) sim_services/input_processor: 
+            input_processor( INPUT_PROCESSOR * IP = &sys.exec.ip ) ;
+
+        (automatic_last) sim_services/exec:
+                 var_server_sync( Inout EXECUTIVE * E = &sys.exec ) ;
+
+} sys ;
+
+sim_object
+{
+        cannon/gravity: CANNON cannon (cannon/gravity/include/cannon.d) ;
+
+        sim_services/include: INTEGRATOR integ 
+                 (cannon/gravity/include/cannon_integ.d) ;
+
+        (initialization) cannon/gravity:
+             cannon_init( CANNON* C = &dyn.cannon ) ;
+
+        (initialization) cannon/gravity:
+             cannon_init_graphics( CANNON* C = &dyn.cannon ) ;
+
+        (initialization) cannon/gravity: cannon_send_position(
+                      CANNON* C = &dyn.cannon ) ;
+
+        (derivative) cannon/gravity:
+             cannon_deriv_impact( CANNON* C = &dyn.cannon ) ;
+
+        (integration) cannon/gravity:
+             cannon_integ( 
+                      INTEGRATOR* I = &dyn.integ,
+                      CANNON* C = &dyn.cannon ) ;
+
+        (dynamic_event) cannon/gravity:
+             cannon_impact(
+                      CANNON* C               = &dyn.cannon,
+                      double* time            = &sys.exec.work.integ_time,
+                      int* event_evaluate_tgo = 
+                                          &sys.exec.work.event_evaluate_tgo ) ;
+
+        (0.1, scheduled) cannon/gravity: cannon_send_position(
+                      CANNON* C = &dyn.cannon ) ;
+} dyn ;
+
+integrate (0.01) dyn ;

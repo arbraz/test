@@ -1,0 +1,17 @@
+ORGANS.Cli = 2.0 ;
+ORGANS.Clu = 2.0 ;
+ORGANS.Cm = 2.0 ;
+ORGANS.params.Pli = 1.0 ;
+ORGANS.params.Plu = 1.0 ;
+ORGANS.params.Qli = 1.0 ;
+ORGANS.params.Qlu = 1.0 ;
+ORGANS.params.Qm = 1.0 ;
+ORGANS.params.Vli = 1.0 ;
+ORGANS.params.Vlu = 1.0 ;
+ORGANS.params.Vm = 1.0 ;
+ORGANS.params.Vm = 1.0 ;
+ORGANS.params.Km_p_450 = 1.0 ;
+ORGANS.params.Vmax_p_450 = 1.0 ;
+ORGANS.params.M = 1.0 ;
+ORGANS.params.kinj = 1.0 ;
+
